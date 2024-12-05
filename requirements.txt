@@ -152,13 +152,13 @@ tensorflow-io-gcs-filesystem>=0.31.0
 termcolor==2.3.0
 thinc==8.1.9
 threadpoolctl==3.1.0
-# tokenizers>=0.13.3
+tokenizers>=0.13.3
 toml==0.10.2
 torch>1.0.0
 tornado==6.2
 tqdm==4.65.0
 traitlets==5.9.0
-transformers==4.29.2
+transformers>=4.29.0,<4.30.0
 trio==0.22.0
 trio-websocket==0.10.2
 typer==0.7.0
