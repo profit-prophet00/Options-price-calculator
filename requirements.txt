@@ -81,7 +81,7 @@ narwhals==1.13.1
 nest-asyncio==1.5.6
 networkx==3.1
 nltk==3.8.1
-numpy==1.26.4
+numpy==1.26.0
 oauthlib==3.2.2
 openpyxl==3.1.2
 outcome==1.2.0
