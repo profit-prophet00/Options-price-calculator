@@ -1,4 +1,4 @@
-# Black-Scholes Calculator (European options)
+# Black-Scholes Calculator (for European-style options)
 
 # Import libraries
 import math
@@ -11,27 +11,14 @@ import matplotlib.ticker as ticker
 import seaborn as sns
 import streamlit as st
 
-# Model setup
 
+# Model setup
 # Determine if current year is a leap year
 current_year = datetime.now().year
 days_in_year = 366 if (current_year % 4 == 0 and (current_year % 100 != 0 or current_year % 400 == 0)) else 365
 
 
-# S is the current price of the underlying asset
-# yfinance
-
-# r is the risk-free rate (e.g. based on the current 10-year Treasury bill's yield)
-# yfinance
-
-# K is the strike price of the option. Notice how the option would be exactly at the money in this example
-# Flag in user interface of in the money or out of the money with color coding
-
-# Put-Call Parity
-
-
 # Define Yahoo! Finance functions
-
 def get_risk_free_rate():
     # Fetch the 10-year Treasury yield from Yahoo! Finance
     tnx = yf.Ticker("^TNX")
@@ -41,7 +28,6 @@ def get_risk_free_rate():
 
 
 # Define Black-Scholes functions
-
 def calc_d1_d2(S, K, r, T, sigma):  
     d1 = (math.log(S/K) + (r + 0.5 * sigma**2) * T) / (sigma * math.sqrt(T))  
     d2 = d1 - sigma * math.sqrt(T)  
@@ -111,9 +97,8 @@ def rho(S, K, r, T, sigma, type ="c"):
         st.sidebar.error("Please confirm all input parameters!")
 
 
-
+#Streamlit setup
 def setup_sidebar():
-        
     st.sidebar.header("Black-Scholes Parameters")
     
     # Fetch and display current risk-free rate
@@ -145,15 +130,12 @@ def setup_sidebar():
     return S, K, r, T, sigma, type
 
 
-# Get model parameters from side bar
-# S, K, r, T, sigma, type = setup_sidebar()
-
-
+# Calculation and display for Streamlit
 def calculate_and_display(S, K, r, T, sigma, type):  
     with st.spinner("Please wait..."):  
         
-        # Define a range of spot prices from 0 to S + 50 for sensitivity analysis
-        spot_prices = np.linspace(1, S + 50, 100)  # Generate 100 points from 0 to S + 50  
+        # Define a range of spot prices from 1 to S + 50 for sensitivity analysis
+        spot_prices = np.linspace(1, S + 50, 100)  
 
         # Calculate option price and Greeks
         # We need to calculate and store the Greek values for each spot_price before plotting
@@ -243,7 +225,7 @@ def calculate_and_display(S, K, r, T, sigma, type):
             col.pyplot(fig)
 
 
-
+# Call functions
 # Get model parameters from side bar  
 S, K, r, T, sigma, type = setup_sidebar()  
   
