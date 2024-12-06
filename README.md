@@ -175,8 +175,8 @@ Calculation and display for Streamlit
 def calculate_and_display(S, K, r, T, sigma, type):  
     with st.spinner("Please wait..."):  
         
-        # Define a range of spot prices from 0 to S + 50 for sensitivity analysis
-        spot_prices = np.linspace(1, S + 50, 100)  # Generate 100 points from 0 to S + 50  
+        # Define a range of spot prices from 1 to S + 50 for sensitivity analysis
+        spot_prices = np.linspace(1, S + 50, 100)  
 
         # Calculate option price and Greeks
         # We need to calculate and store the Greek values for each spot_price before plotting
