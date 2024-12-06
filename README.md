@@ -170,7 +170,7 @@ def setup_sidebar():
     return S, K, r, T, sigma, type
 ```
 
-Calculation and deisplay
+Calculation and display for Streamlit
 ```bash
 def calculate_and_display(S, K, r, T, sigma, type):  
     with st.spinner("Please wait..."):  
