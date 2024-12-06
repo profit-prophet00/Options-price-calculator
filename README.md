@@ -31,7 +31,7 @@ The Black-Scholes model offers a theoretical estimate of option prices by consid
   
 The Greeks (**Delta, Gamma, Vega, Theta, Rho**) measure the sensitivity of the option price to various parameters.
 <br>
-
+<br>
 ### Getting Started  
   
 Ensure you have Python installed on your machine. You will also need to install the following libraries:  
