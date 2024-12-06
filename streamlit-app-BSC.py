@@ -1,5 +1,7 @@
 # Black-Scholes Calculator (for European-style options)
 
+pip install yfinance
+
 # Import libraries
 import math
 import numpy as np
