@@ -1,11 +1,10 @@
 # Options Price Calculator
 
-## Python-based application of the Black-Scholes Model  
+## Project Highlights  
   
 Have you ever wondered how analysts and traders alike determine the fair value of options in the stock market? Dive into the world of financial derivatives with this Options Price Calculator, where we use one of the most renowned models in finance—the Black-Scholes Model. This project provides a comprehensive implementation of the model to estimate the price of European-style options and Greeks using Python.
 <br>
-  
-## Project Highlights  
+<br>
   
 In this Python project, you will explore the following key areas:  
   
@@ -14,6 +13,9 @@ In this Python project, you will explore the following key areas:
 3. **Model Implementation**: Apply the Black-Scholes model in Python using an object-oriented approach.  
 4. **Visualization**: Create stunning plots to visualize option prices and the Greeks.  
 5. **Sensitivity Analysis**: Investigate how option prices respond to variations in different parameters. 
+
+You can view the deployed Streamlit app by clicking [here](https://options-price-calculator-mjgqcfip9yofto9t6venlg.streamlit.app/)
+<br>
 
 ## Why Black-Scholes?
   
