@@ -179,7 +179,7 @@ wsproto==1.2.0
 XlsxWriter==3.2.0
 yahoofinancials==1.20
 yarl==1.9.4
-yfinance==0.2.44
+yfinance
 zstandard==0.21.0
 setuptools>=60.0.0  
 wheel>=0.36.2  
