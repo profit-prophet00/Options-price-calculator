@@ -13,6 +13,10 @@ import seaborn as sns
 import streamlit as st
 
 
+# Not gonna import yfinance, but leaving it here for documentation purposes
+# yfinance typically causes too many issues when deploying an app through Streamlit's Community Cloud
+#import yfinance as yf
+
 # Model setup
 # Determine if current year is a leap year
 current_year = datetime.now().year
