@@ -28,6 +28,48 @@ def get_risk_free_rate():
      return risk_free_rate
 
 
+def get_top_10_apple_options():  
+    # Define the ticker symbol for Apple  
+    ticker_symbol = 'AAPL'  
+      
+    # Download the options data for the Apple ticker  
+    apple = yf.Ticker(ticker_symbol)  
+      
+    # Get the list of expiration dates for the options  
+    expiration_dates = apple.options  
+      
+    # Initialize an empty DataFrame to store all options  
+    all_options = pd.DataFrame()  
+      
+    # Iterate over each expiration date  
+    for expiration in expiration_dates:  
+        # Get the options chain for the current expiration date  
+        options_chain = apple.option_chain(expiration)  
+          
+        # Concatenate calls and puts data  
+        options_data = pd.concat([options_chain.calls, options_chain.puts])  
+          
+        # Append to the all_options DataFrame  
+        all_options = pd.concat([all_options, options_data], ignore_index=True)  
+          
+    # Sort options by volume in descending order and select the top 10  
+    top_10_options = all_options.sort_values(by='volume', ascending=False).head(10)  
+      
+    return top_10_options  
+  
+# Call the function and display the top 10 options  
+top_10_options = get_top_10_apple_options()  
+
+
+
+
+
+
+
+
+
+
+
 # Define Black-Scholes functions
 def calc_d1_d2(S, K, r, T, sigma):  
     d1 = (math.log(S/K) + (r + 0.5 * sigma**2) * T) / (sigma * math.sqrt(T))  
@@ -166,7 +208,11 @@ def calculate_and_display(S, K, r, T, sigma, type):
         st.markdown("<h6>See project's description: <a href='https://github.com/profit-prophet00/Options-price-calculator/blob/main/README.md'>here</a></h6>", unsafe_allow_html=True)
         st.markdown("<h6>See all my other projects here: <a href='https://github.com/profit-prophet00?tab=repositories'>here</a></h6>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
-        
+
+        st.markdown("<h3 align='center'>Top 10 APPLE options by volume)</h3>", unsafe_allow_html=True)
+        top_10_options
+        st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
+
         st.markdown("<h3 align='center'>Option Prices and Greeks</h3>", unsafe_allow_html=True)
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
 
