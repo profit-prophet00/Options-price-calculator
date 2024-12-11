@@ -28,42 +28,33 @@ def get_risk_free_rate():
      return risk_free_rate
 
 
-def get_top_10_apple_options():  
-    # Define the ticker symbol for Apple  
-    ticker_symbol = 'AAPL'  
-      
-    # Download the options data for the Apple ticker  
-    apple = yf.Ticker(ticker_symbol)  
-      
-    # Get the list of expiration dates for the options  
-    expiration_dates = apple.options  
-      
-    # Check if there are any expiration dates  
-    if not expiration_dates:  
-        print("No expiration dates found.")  
-        return None  
-      
-    # Initialize an empty DataFrame to store all options  
-    all_options = pd.DataFrame()  
-      
+def get_options():  
+    # Define the ticker symbol  
+    symbol = 'AAPL'  
+    tk = yf.Ticker(symbol)
+
+    # Expiration dates
+    exps = tk.options
+
+    # Get options for each expiration date
+     options = pd.DataFrame()
+
     # Iterate over each expiration date  
-    for expiration in expiration_dates:  
+    for expiration in exps:  
         try:  
             # Get the options chain for the current expiration date  
-            options_chain = apple.option_chain(expiration)  
+            options_chain = tk.option_chain(expiration)  
               
             # Concatenate calls and puts data  
             options_data = pd.concat([options_chain.calls, options_chain.puts], ignore_index=True)  
               
             # Append to the all_options DataFrame  
             all_options = pd.concat([all_options, options_data], ignore_index=True)  
+             
         except Exception as e:  
             print(f"Error retrieving data for expiration {expiration}: {e}")  
       
-    # Check if any options were retrieved  
-    if all_options.empty:  
-        print("No options data retrieved.")  
-        return None  
+
       
     # Sort options by volume in descending order and select the top 10  
     top_10_options = all_options.sort_values(by='volume', ascending=False).head(10)  
