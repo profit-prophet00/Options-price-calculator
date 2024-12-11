@@ -105,7 +105,8 @@ def setup_sidebar():
     # Fetch and display current risk-free rate
     try:
         current_r = get_risk_free_rate()
-        st.sidebar.write(f"Current 10-Y Treasury Yield (^TNX): {current_r:.2%}")
+        st.sidebar.write(f"Current 10-Y Treasury Yield (^TNX): [{current_r:.2%}](https://finance.yahoo.com/quote/%5ETNX/)")
+     #https://finance.yahoo.com/quote/%5ETNX/
     
     except:
         st.sidebar.error("Unable to retrieve the current risk-free rate.")
