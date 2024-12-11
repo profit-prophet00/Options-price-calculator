@@ -159,7 +159,7 @@ def calculate_and_display(S, K, r, T, sigma, type):
 
         # Web-app layout
         st.markdown("<h2 align='center'>Black-Scholes Option Price Calculator</h2>", unsafe_allow_html=True)
-        st.markdown("<h5 align='center'>Made by the ProfitProphet</h5>", unsafe_allow_html=True)
+        st.markdown("<h5 align='center'>Made by the <a href='https://github.com/profit-prophet00'>profit-prophet</a></h5>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
         
         st.markdown("<h6>See project's description: <a href='https://github.com/profit-prophet00/Options-price-calculator/blob/main/README.md'>here</a></h6>", unsafe_allow_html=True)
