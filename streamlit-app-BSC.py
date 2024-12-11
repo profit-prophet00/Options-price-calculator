@@ -267,8 +267,8 @@ def calculate_and_display(S, K, r, T, sigma, type):
             # Display the plot in the corresponding column
             col.pyplot(fig)
          
-         st.markdown("<h5 align='center'>Illustrative Example: APPLE's Top 10 Options by Volume</h5>", unsafe_allow_html=True)
-         top_10_options 
+        st.markdown("<h5 align='center'>Illustrative Example: APPLE's Top 10 Options by Volume</h5>", unsafe_allow_html=True)
+        top_10_options 
 
 
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
