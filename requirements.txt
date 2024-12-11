@@ -1,17 +1,14 @@
-# New requirements
+# Requirements file
+
+# In practice, instead of using the output from pip freeze directly, you should 
+# manually create a requirements.txt file that lists only the packages your Streamlit app 
+# requires, when deploying an app via Streamlit's Community Cloud. 
 
 matplotlib==3.7.1
-
 matplotlib-inline==0.1.6
-
 numpy==1.26.0
-
 pandas==2.2.1
-
 scipy>=1.10.1
-
 seaborn==0.13.2
-
 streamlit>=1.39.0
-
 yfinance
