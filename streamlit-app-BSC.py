@@ -27,18 +27,18 @@ def get_risk_free_rate():
      risk_free_rate = tnx.history(period="1d")['Close'].iloc[-1] / 100
      return risk_free_rate
 
-
+  
 def get_options():  
     # Define the ticker symbol  
     symbol = 'AAPL'  
-    tk = yf.Ticker(symbol)
-
-    # Expiration dates
-    exps = tk.options
-
-    # Get options for each expiration date
-    options = pd.DataFrame()
-
+    tk = yf.Ticker(symbol)  
+  
+    # Expiration dates  
+    exps = tk.options  
+  
+    # Initialize an empty DataFrame to store all options  
+    all_options = pd.DataFrame()  
+  
     # Iterate over each expiration date  
     for expiration in exps:  
         try:  
@@ -50,21 +50,22 @@ def get_options():
               
             # Append to the all_options DataFrame  
             all_options = pd.concat([all_options, options_data], ignore_index=True)  
-             
+          
         except Exception as e:  
             print(f"Error retrieving data for expiration {expiration}: {e}")  
-      
-
-      
+  
+    # Check if any options were retrieved  
+    if all_options.empty:  
+        print("No options data retrieved.")  
+        return None  
+  
     # Sort options by volume in descending order and select the top 10  
     top_10_options = all_options.sort_values(by='volume', ascending=False).head(10)  
-      
+  
     return top_10_options  
-
-
+  
 # Call the function and display the top 10 options  
 top_10_options = get_options()  
-
 
 
 
