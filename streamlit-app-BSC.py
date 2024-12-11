@@ -37,7 +37,7 @@ def get_options():
     exps = tk.options
 
     # Get options for each expiration date
-     options = pd.DataFrame()
+    options = pd.DataFrame()
 
     # Iterate over each expiration date  
     for expiration in exps:  
