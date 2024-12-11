@@ -65,6 +65,9 @@ def get_options():
   
     return top_10_options  
 
+# Call the function and display the top 10 options (by volume) 
+top_10_options = get_options()
+
 
 # Define Black-Scholes functions
 def calc_d1_d2(S, K, r, T, sigma):  
@@ -205,10 +208,8 @@ def calculate_and_display(S, K, r, T, sigma, type):
         st.markdown("<h6>See all my other projects here: <a href='https://github.com/profit-prophet00?tab=repositories'>here</a></h6>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
 
-        #st.markdown("<h3 align='center'>Top 10 APPLE options by volume)</h3>", unsafe_allow_html=True)
+        st.markdown("<h7 align='center'>Top 10 APPLE options by volume</h7>", unsafe_allow_html=True)
         top_10_options 
-        # Call the function and display the top 10 options (by volume) 
-        top_10_options = get_options()
 
 
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
