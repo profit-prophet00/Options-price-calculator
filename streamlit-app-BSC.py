@@ -208,12 +208,6 @@ def calculate_and_display(S, K, r, T, sigma, type):
         st.markdown("<h6>See all my other projects here: <a href='https://github.com/profit-prophet00?tab=repositories'>here</a></h6>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
 
-        st.markdown("<h5 align='center'>Illustrative Example: APPLE's Top 10 Options by Volume</h5>", unsafe_allow_html=True)
-        top_10_options 
-
-
-        st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
-
         st.markdown("<h3 align='center'>Option Prices and Greeks</h3>", unsafe_allow_html=True)
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
 
@@ -272,6 +266,12 @@ def calculate_and_display(S, K, r, T, sigma, type):
             
             # Display the plot in the corresponding column
             col.pyplot(fig)
+         
+         st.markdown("<h5 align='center'>Illustrative Example: APPLE's Top 10 Options by Volume</h5>", unsafe_allow_html=True)
+         top_10_options 
+
+
+        st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
 
 
 # Call functions
