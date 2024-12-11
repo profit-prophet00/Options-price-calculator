@@ -163,7 +163,7 @@ def calculate_and_display(S, K, r, T, sigma, type):
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
         
         st.markdown("<h6>See project's description: <a href='https://github.com/profit-prophet00/Options-price-calculator/blob/main/README.md'>here</a></h6>", unsafe_allow_html=True)
-        st.markdown("<h6>See all my other projects here: <a href='...'>here</a></h6>", unsafe_allow_html=True)
+        st.markdown("<h6>See all my other projects here: <a href='https://github.com/profit-prophet00?tab=repositories'>here</a></h6>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
         
         st.markdown("<h3 align='center'>Option Prices and Greeks</h3>", unsafe_allow_html=True)
