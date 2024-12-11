@@ -5,17 +5,13 @@
 import math
 import numpy as np
 from datetime import datetime
-#import yfinance as yf
+import yfinance as yf
 from scipy.stats import norm
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker  
 import seaborn as sns
 import streamlit as st
 
-
-# Not gonna import yfinance, but leaving it here for documentation purposes
-# yfinance typically causes too many issues when deploying an app through Streamlit's Community Cloud
-#import yfinance as yf
 
 # Model setup
 # Determine if current year is a leap year
@@ -24,12 +20,12 @@ days_in_year = 366 if (current_year % 4 == 0 and (current_year % 100 != 0 or cur
 
 
 # Define Yahoo! Finance functions
-# def get_risk_free_rate():
-#     # Fetch the 10-year Treasury yield from Yahoo! Finance
-#     tnx = yf.Ticker("^TNX")
-#     # Current yield, divided by 100 for decimal format (e.g., 4.5% becomes 0.045)
-#     risk_free_rate = tnx.history(period="1d")['Close'].iloc[-1] / 100
-#     return risk_free_rate
+def get_risk_free_rate():
+     # Fetch the 10-year Treasury yield from Yahoo! Finance
+     tnx = yf.Ticker("^TNX")
+     # Current yield, divided by 100 for decimal format (e.g., 4.5% becomes 0.045)
+     risk_free_rate = tnx.history(period="1d")['Close'].iloc[-1] / 100
+     return risk_free_rate
 
 
 # Define Black-Scholes functions
