@@ -4,6 +4,7 @@
 # Import libraries
 import math
 import numpy as np
+import pandas as pd
 from datetime import datetime
 import yfinance as yf
 from scipy.stats import norm
