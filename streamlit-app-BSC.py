@@ -162,7 +162,7 @@ def calculate_and_display(S, K, r, T, sigma, type):
         st.markdown("<h5 align='center'>Made by the ProfitProphet</h5>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
         
-        st.markdown("<h6>See project's description here: <a href='...'>https://github.com/profit-prophet00/Options-price-calculator/blob/main/README.md</a></h6>", unsafe_allow_html=True)
+        st.markdown("<h6>See project's description here: <a href='https://github.com/profit-prophet00/Options-price-calculator/blob/main/README.md'>https://github.com/profit-prophet00/Options-price-calculator/blob/main/README.md</a></h6>", unsafe_allow_html=True)
         st.markdown("<h6>See all my other projects here: <a href='...'>...</a></h6>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
         
