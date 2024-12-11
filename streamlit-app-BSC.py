@@ -38,25 +38,39 @@ def get_top_10_apple_options():
     # Get the list of expiration dates for the options  
     expiration_dates = apple.options  
       
+    # Check if there are any expiration dates  
+    if not expiration_dates:  
+        print("No expiration dates found.")  
+        return None  
+      
     # Initialize an empty DataFrame to store all options  
     all_options = pd.DataFrame()  
       
     # Iterate over each expiration date  
     for expiration in expiration_dates:  
-        # Get the options chain for the current expiration date  
-        options_chain = apple.option_chain(expiration)  
-          
-        # Concatenate calls and puts data  
-        options_data = pd.concat([options_chain.calls, options_chain.puts])  
-          
-        # Append to the all_options DataFrame  
-        all_options = pd.concat([all_options, options_data], ignore_index=True)  
-          
+        try:  
+            # Get the options chain for the current expiration date  
+            options_chain = apple.option_chain(expiration)  
+              
+            # Concatenate calls and puts data  
+            options_data = pd.concat([options_chain.calls, options_chain.puts], ignore_index=True)  
+              
+            # Append to the all_options DataFrame  
+            all_options = pd.concat([all_options, options_data], ignore_index=True)  
+        except Exception as e:  
+            print(f"Error retrieving data for expiration {expiration}: {e}")  
+      
+    # Check if any options were retrieved  
+    if all_options.empty:  
+        print("No options data retrieved.")  
+        return None  
+      
     # Sort options by volume in descending order and select the top 10  
     top_10_options = all_options.sort_values(by='volume', ascending=False).head(10)  
       
     return top_10_options  
-  
+
+
 # Call the function and display the top 10 options  
 top_10_options = get_top_10_apple_options()  
 
