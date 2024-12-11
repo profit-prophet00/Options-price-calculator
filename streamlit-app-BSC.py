@@ -48,7 +48,10 @@ def get_options():
               
             # Concatenate calls and puts data  
             options_data = pd.concat([options_chain.calls, options_chain.puts], ignore_index=True)  
-              
+             
+            # Add expiration date as a column  
+            options_data['expiration'] = pd.to_datetime(expiration)
+             
             # Append to the all_options DataFrame  
             all_options = pd.concat([all_options, options_data], ignore_index=True)  
           
