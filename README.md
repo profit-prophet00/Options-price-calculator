@@ -67,6 +67,49 @@ def get_risk_free_rate():
     # Current yield, divided by 100 for decimal format (e.g., 4.5% becomes 0.045)
     risk_free_rate = tnx.history(period="1d")['Close'].iloc[-1] / 100
     return risk_free_rate
+
+
+def get_options():  
+    # Define the ticker symbol  
+    symbol = 'NVDA'  
+    tk = yf.Ticker(symbol)  
+  
+    # Expiration dates  
+    exps = tk.options  
+  
+    # Initialize an empty DataFrame to store all options  
+    all_options = pd.DataFrame()  
+  
+    # Iterate over each expiration date  
+    for expiration in exps:  
+        try:  
+            # Get the options chain for the current expiration date  
+            options_chain = tk.option_chain(expiration)  
+              
+            # Concatenate calls and puts data  
+            options_data = pd.concat([options_chain.calls, options_chain.puts], ignore_index=True)  
+            
+            # Add expiration date as a column  
+            options_data['expiration'] = pd.to_datetime(expiration)
+
+            # Append to the all_options DataFrame  
+            all_options = pd.concat([all_options, options_data], ignore_index=True)  
+          
+        except Exception as e:  
+            print(f"Error retrieving data for expiration {expiration}: {e}")  
+  
+    # Check if any options were retrieved  
+    if all_options.empty:  
+        print("No options data retrieved.")  
+        return None  
+  
+    # Sort options by volume in descending order and select the top 10  
+    top_10_options = all_options.sort_values(by='volume', ascending=False).head(10)  
+  
+    return top_10_options  
+
+# Call the function and display the top 10 options (by volume) 
+top_10_options = get_options()
 ```
 
 Black-Scholes functions
@@ -207,8 +250,8 @@ def calculate_and_display(S, K, r, T, sigma, type):
         st.markdown("<h5 align='center'>Made by the ProfitProphet</h5>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
         
-        st.markdown("<h6>See project's description and assumptions here: <a href='...'>...</a></h6>", unsafe_allow_html=True)
-        st.markdown("<h6>See all my other projects here: <a href='...'>...</a></h6>", unsafe_allow_html=True)
+        st.markdown("<h6>See project's description and assumptions: <a href='...'>here</a></h6>", unsafe_allow_html=True)
+        st.markdown("<h6>See all my other projects: <a href='...'>here</a></h6>", unsafe_allow_html=True)
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
         
         st.markdown("<h3 align='center'>Option Prices and Greeks</h3>", unsafe_allow_html=True)
@@ -269,6 +312,11 @@ def calculate_and_display(S, K, r, T, sigma, type):
             
             # Display the plot in the corresponding column
             col.pyplot(fig)
+
+        st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
+        st.markdown("<h5 align='center'>Illustrative Example: NVDA's Top 10 Options by Volume</h5>", unsafe_allow_html=True)
+        top_10_options 
+        st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
 ```
 
 Call functions
