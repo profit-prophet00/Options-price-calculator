@@ -31,7 +31,7 @@ def get_risk_free_rate():
 
 def get_options():  
     # Define the ticker symbol  
-    symbol = 'AAPL'  
+    symbol = 'NVDA'  
     tk = yf.Ticker(symbol)  
   
     # Expiration dates  
@@ -272,7 +272,7 @@ def calculate_and_display(S, K, r, T, sigma, type):
 
          
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
-        st.markdown("<h5 align='center'>Illustrative Example: AAPL's Top 10 Options by Volume</h5>", unsafe_allow_html=True)
+        st.markdown("<h5 align='center'>Illustrative Example: NVDA's Top 10 Options by Volume</h5>", unsafe_allow_html=True)
         top_10_options 
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
 
