@@ -63,7 +63,7 @@ def get_options():
 
 
 # Call the function and display the top 10 options  
-top_10_options = get_top_10_apple_options()  
+top_10_options = get_options()  
 
 
 
