@@ -2,7 +2,7 @@
 
 ## Project Highlights  
   
-Have you ever wondered how analysts and traders alike determine the fair value of options in the stock market? Dive into the world of financial derivatives with this Options Price Calculator, where we use one of the most renowned models in finance—the Black-Scholes Model. This project provides a comprehensive implementation of the model to estimate the price of European-style options and Greeks using Python.
+Ever wondered how analysts and traders determine the fair value of stock market options? Discover the world of financial derivatives with this Options Price Calculator, where we use one of the most renowned models in finance—the Black-Scholes Model. This project provides a comprehensive implementation of the model to estimate the price of European-style options and Greeks using Python.
 
 <br>
 
@@ -15,7 +15,7 @@ In this Python project, you will explore the following key areas:
 1. **Understanding the Black-Scholes Formula**: Break down the components of the model and learn the mathematics behind it.  
 2. **Data Retrieval**: Use the `yfinance` library to fetch real market data for options analysis.  
 3. **Model Implementation**: Apply the Black-Scholes model in Python using an object-oriented approach.  
-4. **Visualization**: Create stunning plots to visualize option prices and the Greeks.  
+4. **Visualization**: Create plots to visualize option prices and the Greeks.  
 5. **Sensitivity Analysis**: Investigate how option prices respond to variations in different parameters. 
 
 <br>
@@ -23,11 +23,11 @@ In this Python project, you will explore the following key areas:
 ## Why Black-Scholes?
   
 The Black-Scholes model offers a theoretical estimate of option prices by considering key financial factors:  
-- **Current Stock Price**: The present value of the underlying asset.  
-- **Option's Strike Price**: The set price at which the option can be exercised.  
-- **Time to Expiration**: The remaining time until the option's maturity date.  
-- **Risk-Free Interest Rate**: The return on a risk-free investment, such as a government bond.  
-- **Volatility**: The measure of how much the asset's price is expected to fluctuate.  
+- **Current Stock Price (S)**: The present value of the underlying asset.  
+- **Option's Strike Price (K)**: The set price at which the option can be exercised.  
+- **Time to Expiration (t)**: The remaining time until the option's maturity date.  
+- **Risk-Free Interest Rate (r)**: The return on a risk-free investment, such as a government bond.  
+- **Volatility (σ)**: The measure of how much the asset's price is expected to fluctuate.  
   
 The Greeks (**Delta, Gamma, Vega, Theta, Rho**) measure the sensitivity of the option price to various parameters.
 <br>
