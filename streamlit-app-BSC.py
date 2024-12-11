@@ -28,7 +28,7 @@ def get_risk_free_rate():
      risk_free_rate = tnx.history(period="1d")['Close'].iloc[-1] / 100
      return risk_free_rate
 
-  
+
 def get_options():  
     # Define the ticker symbol  
     symbol = 'AAPL'  
@@ -64,17 +64,6 @@ def get_options():
     top_10_options = all_options.sort_values(by='volume', ascending=False).head(10)  
   
     return top_10_options  
-  
-# Call the function and display the top 10 options  
-top_10_options = get_options()  
-
-
-
-
-
-
-
-
 
 
 # Define Black-Scholes functions
@@ -217,7 +206,11 @@ def calculate_and_display(S, K, r, T, sigma, type):
         st.markdown("<h6 align='center'></h6>", unsafe_allow_html=True)
 
         #st.markdown("<h3 align='center'>Top 10 APPLE options by volume)</h3>", unsafe_allow_html=True)
-        top_10_options
+        top_10_options 
+        # Call the function and display the top 10 options (by volume) 
+        top_10_options = get_options()
+
+
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
 
         st.markdown("<h3 align='center'>Option Prices and Greeks</h3>", unsafe_allow_html=True)
