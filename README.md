@@ -36,13 +36,14 @@ The Greeks (**Delta, Gamma, Vega, Theta, Rho**) measure the sensitivity of the o
   
 Ensure you have Python installed on your machine. You will also need to install the following libraries:  
 ```bash
-pip install numpy yfinance scipy matplotlib seaborn streamlit yfinance  
+pip install numpy pandas yfinance scipy matplotlib seaborn streamlit yfinance  
 ```
 
 Library imports
 ```bash
 import math  
-import numpy as np  
+import numpy as np
+import pandas as pd
 from datetime import datetime  
 import yfinance as yf  
 from scipy.stats import norm  
