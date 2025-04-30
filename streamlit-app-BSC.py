@@ -69,7 +69,7 @@ def get_options():
     return top_10_options  
 
 # Call the function and display the top 10 options (by volume) 
-top_10_options = get_options()
+# top_10_options = get_options()
 
 
 # Define Black-Scholes functions
@@ -273,7 +273,7 @@ def calculate_and_display(S, K, r, T, sigma, type):
          
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
         st.markdown("<h5 align='center'>Illustrative Example: NVDA's Top 10 Options by Volume</h5>", unsafe_allow_html=True)
-        top_10_options 
+        #top_10_options 
         st.markdown("<h7 align='center'></h7>", unsafe_allow_html=True)
 
 
